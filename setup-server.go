@@ -1,6 +1,8 @@
 package httpserver
 
 import (
+	"fmt"
+	"log"
 	"net"
 	"net/http"
 )
@@ -12,6 +14,9 @@ func RunServer(address string) error {
 
 	if err != nil {
 		return err
+	} else {
+		log.Println("Server is running")
+		fmt.Println("Awesome server is Runing ", address)
 	}
 
 	if err = http.Serve(listenServe, nil); err != nil {
